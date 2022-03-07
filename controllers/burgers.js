@@ -33,8 +33,24 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Burger.findById(req.params.id)
+  .populate("owner")
+  .then(burger => {
+    res.render('burgers/show', {
+      burger,
+      title: "Show Burger"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/burgers')
+  })
+}
+
 export {
   index,
   newBurger as new,
-  create
+  create,
+  show
 }
