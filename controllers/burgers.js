@@ -62,10 +62,30 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Burger.findById(req.params.id)
+  .then(burger => {
+    if (burger.owner.equals(req.user.profile._id)) {
+      req.body.cheese = !!req.body.cheese
+      burger.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/burgers/${burger._id}`)
+      })
+    } else {
+      throw new Error ('Access Denied')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/burgers`)
+  })
+}
+
 export {
   index,
   newBurger as new,
   create,
   show,
-  edit
+  edit,
+  update
 }
