@@ -81,11 +81,30 @@ function update(req, res) {
   })
 }
 
+function deleteBurger(req, res) {
+  Burger.findById(req.params.id)
+  .then(burger => {
+    if (burger.owner.equals(req.user.profile._id)) {
+      burger.delete()
+      .then(() => {
+        res.redirect('/burgers')
+      })
+    } else {
+      throw new Error ('Access Denied')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/burgers')
+  })
+}
+
 export {
   index,
   newBurger as new,
   create,
   show,
   edit,
-  update
+  update,
+  deleteBurger as delete
 }

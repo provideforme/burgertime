@@ -13,6 +13,9 @@
       <form action="/burgers/<%= burger._id %>/edit" method="GET">
         <button class="btn" type="submit">Edit Burger Details</button>
       </form>
+      <form action="/burgers/<%= burger._id %>?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Delete Burger</button>
+      </form>
     <% } %>
   </section>
 </main>

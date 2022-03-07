@@ -10,6 +10,7 @@ router.get('/:id', burgersCtrl.show)
 router.get('/:id/edit', isLoggedIn, burgersCtrl.edit)
 router.post('/', isLoggedIn, burgersCtrl.create)
 router.put('/:id', isLoggedIn, burgersCtrl.update)
+router.delete('/:id', isLoggedIn, burgersCtrl.delete)
 
 export {
   router
