@@ -14,6 +14,13 @@ function index(req, res) {
   })
 }
 
+function newBurger(req, res){
+  res.render('burgers/new', {
+    title: ""
+  })
+}
+
 export {
-  index
+  index,
+  newBurger as new,
 }

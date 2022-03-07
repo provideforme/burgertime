@@ -1,14 +1,31 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
-  <h1>Burgers</h1>
-  <h2>will eventually go here!</h2>
-	<ul>
-  <% burgers.forEach(burger => { %>
-    <li> <%= burger.name %> has <%= burger.cheese ? 'cheese' : 'no cheese' %></li>
-  <% }) %>
-  </ul>
-</section>
+<main>
+  <h1>Your Favorite Burgers!</h1>
+  <table id="list">
+    <thead>
+      <tr>
+        <th>Burger</th>
+        <th>Restaurant</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% burgers.forEach(burger => { %>
+        <tr> 
+          <td><%= burger.name %> </td>
+          <td>from <%= burger.restaurant %> </td>
+          <td>in <%= burger.location %> </td>
+          <td><a href="/burgers/<%= burger._id %>">DETAILS</a></td></td>
+      <% }) %>
+      </tbody>
+    </table>
+  <h2>Don't see your favorite burger on the list?</h2>
+  <h3>Add it by clicking</h3>
+  <a href="/burgers/new">
+    <button type="submit">Here!</button>
+  </a>
+  
+</main>
 
 <%- include('../partials/footer') %>

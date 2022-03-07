@@ -1,0 +1,38 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (user) { %>
+    <h2>Add your Favorite Burger!</h2>
+    <form id="new-form" action="/burgers" method="POST">
+      <label>
+        Name: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Restaurant Name: 
+        <input type="text" name="restaurant" autocomplete="off">
+      </label>
+      <label>
+        Restaurant Location: 
+        <input type="text" name="location" autocomplete="off">
+      </label>
+      <label>Cook Temp
+        <select name="cook">
+          <option value="Rare">Rare</option>
+          <option value="Medium-Rare">Medium-Rare</option>
+          <option value="Medium">Medium</option>
+          <option value="Medium-Well">Medium-Well</option>
+          <option value="Well-Done">Well-Done</option>
+        </select>
+      </label>
+      <label>
+        Cheese?
+        <input type="checkbox" name="cheese">
+      </label>
+      <button type="submit">Add Burger</button>
+    </form>
+  <% } %>
+  </main>
+
+<%- include('../partials/footer') %>

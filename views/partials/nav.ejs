@@ -4,7 +4,14 @@
 </head>
 <body>
   <nav>
-    <a href="/burgers">Burgers</a>
+    <a href="/burgers" <%- title === 'Burgers' ? 'class="active"' : '' %>
+      >
+      Burgers
+    </a>
+    <a href="/burgers/new" <%- title === 'Add Burger' ? 'class="active"' : '' %>
+      >
+      Add A Burger
+    </a>
     <a href="/profiles">User</a>
     <% if (user) { %>
       <a href="/auth/logout">
