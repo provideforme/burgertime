@@ -1,12 +1,20 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
-	<h1>One of <%= burger.owner.name %>'s favorite burgers is...</h1>
-  <h1><%= burger.name %></h1>
-  <h1>From <%= burger.restaurant %></h1>
-  <h1>In <%= burger.location %> </h1>
-  <h1><%= burger.name %>  has <%= burger.cheese ? 'cheese' : 'no cheese' %> on it.</h1>
-</section>
+<main>
+  <a href="/burgers">Back</a>
+  <section>
+    <h1>One of <%= burger.owner.name %>'s favorite burgers is...</h1>
+    <h1><%= burger.name %></h1>
+    <h1>From <%= burger.restaurant %></h1>
+    <h1>In <%= burger.location %> </h1>
+    <h1><%= burger.name %>  has <%= burger.cheese ? 'cheese' : 'no cheese' %> on it.</h1>
+    <% if (burger.owner.equals(user?.profile._id)) { %>
+      <form action="/burgers/<%= burger._id %>/edit" method="GET">
+        <button class="btn" type="submit">Edit Burger Details</button>
+      </form>
+    <% } %>
+  </section>
+</main>
 
 <%- include('../partials/footer') %>

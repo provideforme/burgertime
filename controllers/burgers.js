@@ -48,9 +48,24 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Burger.findById(req.params.id)
+  .then(burger => {
+    res.render('burgers/edit', {
+      burger,
+      title: "Edit Burger"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/burgers')
+  })
+}
+
 export {
   index,
   newBurger as new,
   create,
-  show
+  show,
+  edit
 }
