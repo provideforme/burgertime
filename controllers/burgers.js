@@ -21,6 +21,7 @@ function newBurger(req, res){
 }
 
 function create(req, res) {
+  console.log(req.body)
   req.body.owner = req.user.profile._id
 	req.body.cheese = !!req.body.cheese
   Burger.create(req.body)
@@ -99,6 +100,15 @@ function deleteBurger(req, res) {
   })
 }
 
+function createReview(req, res) {
+  Burger.findById(req.params.id, function(err, burger) {
+    burger.reviews.push(req.body)
+    burger.save(function(err) {
+      res.redirect(`/burgers/${burger._id}`)
+    })
+  })
+}
+
 export {
   index,
   newBurger as new,
@@ -106,5 +116,6 @@ export {
   show,
   edit,
   update,
-  deleteBurger as delete
+  deleteBurger as delete,
+  createReview
 }

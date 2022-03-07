@@ -8,7 +8,55 @@
     <h1><%= burger.name %></h1>
     <h1>From <%= burger.restaurant %></h1>
     <h1>In <%= burger.location %> </h1>
+    <h1>The cook temp was <%= burger.cook %> </h1>
     <h1><%= burger.name %>  has <%= burger.cheese ? 'cheese' : 'no cheese' %> on it.</h1>
+    <% if (burger.reviews.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Reviewer</th>
+            <th>Date</th>
+            <th>Review</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% burger.reviews.forEach(review => { %>
+            <tr>
+              <td><%= review.reviewer %> </td>
+              <td><%= review.createdAt.toLocaleDateString() %></td>
+              <td><%= review.content %></td>
+              <td><%= review.rating %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h3>No Reviews Yet</h3>
+    <% } %>
+    <% if (user) { %>
+      <h2>Leave a Review</h2>
+        <form 
+          id="add-review-form"
+          action="/burgers/<%= burger._id %>/reviews"
+          method="POST"
+        >
+          <label for="content-textarea">Review:</label>
+            <textarea name="content" id="content-textarea"></textarea>
+          <label for="rating-select">Rating:</label>
+            <select name="rating" id="rating-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5" selected>5</option>
+            </select>
+          <label for="reviewer-name" hidden> 
+            <textarea name="reviewer" id="user-textarea"><%= user.profile.name %></textarea>
+          </label>
+          <button type="submit">Add Review</button>
+        </form>
+      <% } %> 
     <% if (burger.owner.equals(user?.profile._id)) { %>
       <form action="/burgers/<%= burger._id %>/edit" method="GET">
         <button class="btn" type="submit">Edit Burger Details</button>
