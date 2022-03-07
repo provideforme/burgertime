@@ -16,11 +16,25 @@ function index(req, res) {
 
 function newBurger(req, res){
   res.render('burgers/new', {
-    title: ""
+    title: "Add Burger"
+  })
+}
+
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+	req.body.cheese = !!req.body.cheese
+  Burger.create(req.body)
+  .then(burger => {
+    res.redirect('/burgers')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/burgers')
   })
 }
 
 export {
   index,
   newBurger as new,
+  create
 }
