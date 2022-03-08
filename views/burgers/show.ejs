@@ -29,6 +29,12 @@
               <td><%= review.createdAt.toLocaleDateString() %></td>
               <td><%= review.content %></td>
               <td><%= review.rating %></td>
+              <td><% if (review.owner.equals(user?.profile._id)) { %>
+                <form action="/burgers/<%= burger._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                  <button class="btn" type="submit">Delete Review</button>
+                </form>
+              <% } %>
+            </td>
             </tr>
           <% }) %>
           <tr>

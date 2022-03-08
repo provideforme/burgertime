@@ -12,6 +12,7 @@ router.post('/', isLoggedIn, burgersCtrl.create)
 router.post('/:id/reviews', isLoggedIn, burgersCtrl.createReview)
 router.put('/:id', isLoggedIn, burgersCtrl.update)
 router.delete('/:id', isLoggedIn, burgersCtrl.delete)
+router.delete('/:id/reviews/:reviewId', isLoggedIn, burgersCtrl.deleteReview)
 
 export {
   router

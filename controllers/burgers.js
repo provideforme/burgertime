@@ -104,6 +104,11 @@ function deleteBurger(req, res) {
 
 function createReview(req, res) {
   req.body.owner = req.user.profile._id
+  // Profile.findById(req.user.profile._id)
+  // .then(profile => {
+  //   profile.reviews.push(req.body)
+  //   profile.save()
+  // })
   Burger.findById(req.params.id, function(err, burger) {
     burger.reviews.push(req.body)
     burger.save(function(err) {
@@ -112,11 +117,23 @@ function createReview(req, res) {
   })
 }
 
-// Profile.findById(req.user.profile._id)
-// .then(profile => {
-//   profile.reviews.push(review._id)
-//   profile.save()
-// })
+function deleteReview(req, res) {
+  Burger.findById(req.params.id)
+  .then(burger => {
+    if (burger.owner.equals(req.user.profile._id)) {
+      burger.reviews.id(req.params.reviewId).remove()
+      burger.save(function(err){
+        res.redirect(`/burgers/${burger._id}`)
+      })
+      console.log(burger.reviews);
+    } else {
+      throw new Error ('Access Denied')
+    }   
+  })
+  
+  
+}
+
 
 export {
   index,
@@ -126,5 +143,6 @@ export {
   edit,
   update,
   deleteBurger as delete,
-  createReview
+  createReview,
+  deleteReview
 }
