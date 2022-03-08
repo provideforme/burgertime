@@ -1,4 +1,5 @@
 import { Burger } from '../models/burger.js'
+import { Profile } from '../models/profile.js'
 
 function index(req, res) {
   Burger.find({})
@@ -37,6 +38,7 @@ function create(req, res) {
 function show(req, res) {
   Burger.findById(req.params.id)
   .populate("owner")
+  .populate({path: "reviews.owner"})
   .then(burger => {
     res.render('burgers/show', {
       burger,
@@ -101,6 +103,7 @@ function deleteBurger(req, res) {
 }
 
 function createReview(req, res) {
+  req.body.owner = req.user.profile._id
   Burger.findById(req.params.id, function(err, burger) {
     burger.reviews.push(req.body)
     burger.save(function(err) {
@@ -108,6 +111,12 @@ function createReview(req, res) {
     })
   })
 }
+
+// Profile.findById(req.user.profile._id)
+// .then(profile => {
+//   profile.reviews.push(review._id)
+//   profile.save()
+// })
 
 export {
   index,

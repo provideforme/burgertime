@@ -25,7 +25,7 @@
           <% burger.reviews.forEach(review => { %>
             <% total += review.rating %>
             <tr>
-              <td><%= review.reviewer %> </td>
+              <td><%= review.owner.name %> </td>
               <td><%= review.createdAt.toLocaleDateString() %></td>
               <td><%= review.content %></td>
               <td><%= review.rating %></td>
@@ -59,15 +59,9 @@
               <option value="4">4</option>
               <option value="5" selected>5</option>
             </select>
-          <label for="reviewer-name" hidden> 
-            <textarea name="reviewer" id="user-textarea"><%= user.profile.name %></textarea>
-          </label>
           <button type="submit">Add Review</button>
         </form>
         <form 
-        id="add-favorite-form" 
-        action="/profiles/<%= profile._id %>/favorites" method="POST">
-      </form>
       <% } %> 
     <% if (burger.owner.equals(user?.profile._id)) { %>
       <form action="/burgers/<%= burger._id %>/edit" method="GET">

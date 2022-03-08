@@ -6,6 +6,9 @@ const reviewSchema = new Schema({
   content: String,
   rating: {type: Number, min: 1, max: 5, default: 5},
   reviewer: String,
+  owner: {
+    type: Schema.Types.ObjectId, ref: "Profile"
+  },
 }, {
   timestamps: true
 })
