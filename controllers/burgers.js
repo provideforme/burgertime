@@ -26,7 +26,7 @@ function create(req, res) {
 	req.body.cheese = !!req.body.cheese
   Burger.create(req.body)
   .then(burger => {
-    res.redirect('/burgers')
+    res.redirect(`/burgers/${burger._id}`)
   })
   .catch(err => {
     console.log(err)
