@@ -21,7 +21,9 @@
           </tr>
         </thead>
         <tbody>
+          <% let total = 0 %>
           <% burger.reviews.forEach(review => { %>
+            <% total += review.rating %>
             <tr>
               <td><%= review.reviewer %> </td>
               <td><%= review.createdAt.toLocaleDateString() %></td>
@@ -29,6 +31,12 @@
               <td><%= review.rating %></td>
             </tr>
           <% }) %>
+          <tr>
+            <td colspan="3"></td>
+            <td>
+              <strong><%= (total / burger.reviews.length).toFixed(1) %></strong>
+            </td>
+          </tr>
         </tbody>
       </table>
     <% } else { %>
