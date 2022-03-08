@@ -64,6 +64,10 @@
           </label>
           <button type="submit">Add Review</button>
         </form>
+        <form 
+        id="add-favorite-form" 
+        action="/profiles/<%= profile._id %>/favorites" method="POST">
+      </form>
       <% } %> 
     <% if (burger.owner.equals(user?.profile._id)) { %>
       <form action="/burgers/<%= burger._id %>/edit" method="GET">
