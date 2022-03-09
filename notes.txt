@@ -1,0 +1,10 @@
+async function show(req, res) {
+const Profile = await profile.find({})
+const burgers = await Burger.find({})
+const usersBurgers = burgers.filter(
+  burger => 
+  if (owner.id !== req.owner.id)
+  
+)
+
+}

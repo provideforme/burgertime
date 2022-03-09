@@ -22,12 +22,16 @@ function newBurger(req, res){
 }
 
 function create(req, res) {
-  console.log(req.body)
   req.body.owner = req.user.profile._id
 	req.body.cheese = !!req.body.cheese
   Burger.create(req.body)
   .then(burger => {
-    res.redirect(`/burgers/${burger._id}`)
+    Profile.findById(req.user.profile._id)
+    .then( profile => {
+      profile.burgers.push(burger._id)
+      profile.save()
+      res.redirect(`/burgers/${burger._id}`)
+    })
   })
   .catch(err => {
     console.log(err)
@@ -104,11 +108,6 @@ function deleteBurger(req, res) {
 
 function createReview(req, res) {
   req.body.owner = req.user.profile._id
-  // Profile.findById(req.user.profile._id)
-  // .then(profile => {
-  //   profile.reviews.push(req.body)
-  //   profile.save()
-  // })
   Burger.findById(req.params.id, function(err, burger) {
     burger.reviews.push(req.body)
     burger.save(function(err) {

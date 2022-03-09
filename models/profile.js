@@ -6,7 +6,9 @@ import mongoose from 'mongoose'
 const profileSchema = new mongoose.Schema({
   name: String,
   avatar: String,
-  // reviews: [{type: mongoose.Schema.Types.ObjectId, ref: 'Reviews'}],
+  burgers: [{
+    type: mongoose.Schema.Types.ObjectId, ref: "Burger"
+  }]
 }, {
   timestamps: true
 })

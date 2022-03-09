@@ -11,26 +11,9 @@
       >
     </div>
   <% } %>
-  <main>
-    <h1>My Favorite Burgers</h1>
-    <table id="list">
-      <thead>
-        <tr>
-          <th>Burger</th>
-          <th>Restaurant</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% burgers.forEach(burger => { %>
-          <tr> 
-            <td><%= burger.name %> </td>
-            <td>from <%= burger.restaurant %> </td>
-            <td>in <%= burger.location %> </td>
-            <td><a href="/burgers/<%= burger._id %>">DETAILS</a></td></td>
-        <% }) %>
-        </tbody>
-      </table>
-
+    <% profile.burgers.forEach(burger => { %>
+      <%= burger.name %> 
+    <% }) %> 
 </main>
 
 <%- include('../partials/footer') %>
