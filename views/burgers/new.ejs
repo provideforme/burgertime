@@ -1,22 +1,26 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/add.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <% if (user) { %>
-    <h2>Add your Favorite Burger!</h2>
+    <h1>Add your Favorite Burger!</h1>
     <form id="new-form" action="/burgers" method="POST">
       <label>
         Name: 
         <input type="text" name="name" autocomplete="off">
       </label>
+      <br>
       <label>
         Restaurant Name: 
         <input type="text" name="restaurant" autocomplete="off">
       </label>
+      <br>
       <label>
         Restaurant Location: 
         <input type="text" name="location" autocomplete="off">
       </label>
+      <br>
       <label>Cook Temp:
         <select name="cook">
           <option value="Rare">Rare</option>
@@ -26,11 +30,13 @@
           <option value="Well-Done">Well-Done</option>
         </select>
       </label>
+      <br>
       <label>
         Cheese?
         <input type="checkbox" name="cheese">
       </label>
-      <button type="submit">Add Burger</button>
+      <br>
+      <button class="btn btn-outline-dark btn-lg" type="submit">Add Burger</button>
     </form>
   <% } %>
   </main>

@@ -3,28 +3,35 @@
 
 <main>
   <h1>Worlds Greatest Burgers</h1>
-  <table id="list">
-    <thead>
-      <tr>
-        <th>Burger</th>
-        <th>Restaurant</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% burgers.forEach(burger => { %>
-        <tr> 
-          <td><%= burger.name %> </td>
-          <td>from <%= burger.restaurant %> </td>
-          <td>in <%= burger.location %> </td>
-          <td><a href="/burgers/<%= burger._id %>">DETAILS</a></td></td>
-      <% }) %>
-      </tbody>
-    </table>
-  <h2>Don't see your favorite burger on the list?</h2>
-  <h3>Add it by clicking</h3>
-  <a href="/burgers/new">
-    <button type="submit">Here!</button>
-  </a>
+  <img src="../images/vt-burger-1.jpeg">
+  <div>
+    <% if (burgers.length) { %>
+    <table id="list">
+      <thead>
+        <tr>
+          <th>Burger</th>
+          <th>Restaurant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% burgers.forEach(burger => { %>
+          <tr> 
+            <td><%= burger.name %> </td>
+            <td>from <%= burger.restaurant %> </td>
+            <td>in <%= burger.location %> </td>
+            <td><a href="/burgers/<%= burger._id %>">DETAILS</a></td></td>
+        <% }) %>
+        </tbody>
+      </table>
+      <% } else { %> 
+        <h2>No Burgers Yet</h2>
+        <% } %> 
+    <h2>Don't see your favorite burger on the list?</h2>
+    <h3>Add it by clicking</h3>
+    <a href="/burgers/new">
+      <button class="btn btn-outline-dark btn-lg" type="submit">Here!</button>
+    </a>
+</div>
   
 </main>
 
