@@ -2,35 +2,55 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <div id="heading">
   <h1>Worlds Greatest Burgers</h1>
   <img src="../images/vt-burger-1.jpeg">
+</div>
   <div>
     <% if (burgers.length) { %>
     <table id="list">
-      <thead>
+      <thead id="burgerlist">
         <tr>
-          <th>Burger</th>
-          <th>Restaurant</th>
+          <th>
+            <h2>Burger</h2>
+          </th>
+          <th>
+          </th>
+          <th>
+            <h2>Restaurant</h2>
+          </th>
         </tr>
       </thead>
+      <br>
       <tbody>
         <% burgers.forEach(burger => { %>
           <tr> 
-            <td><%= burger.name %> </td>
-            <td>from <%= burger.restaurant %> </td>
-            <td>in <%= burger.location %> </td>
-            <td><a href="/burgers/<%= burger._id %>">DETAILS</a></td></td>
+            <td>
+              <h2>
+                <a href="/burgers/<%= burger._id %>">
+                  <%= burger.name %>
+              </a>
+              </h2>
+            </td>
+            <td>
+              <h2>&NonBreakingSpace;from&NonBreakingSpace;</h2>
+            </td>
+            <td>
+              <h2>
+                <%= burger.restaurant %> </td>
+              </h2>
+            </td>
+          </tr>
         <% }) %>
         </tbody>
       </table>
       <% } else { %> 
         <h2>No Burgers Yet</h2>
         <% } %> 
+        <br>
     <h2>Don't see your favorite burger on the list?</h2>
-    <h3>Add it by clicking</h3>
-    <a href="/burgers/new">
-      <button class="btn btn-outline-dark btn-lg" type="submit">Here!</button>
-    </a>
+    <h3>Add it by clicking <a href="/burgers/new">here!</a></h3>
+    
 </div>
   
 </main>
