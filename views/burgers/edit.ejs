@@ -2,7 +2,10 @@
 <%- include('../partials/nav') %>
 
 <main>
-    <h2>Edit Your Favorite Burger!</h2>
+  <div id="heading">
+    <h1>Edit Your Burger</h1>
+    <img src="../images/vt-burger-1.jpeg">
+  </div>
     <form action="/burgers/<%= burger._id %>?_method=PUT" method="POST" method="POST">
       <label>
         Name: 
