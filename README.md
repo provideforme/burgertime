@@ -1,70 +1,62 @@
-# MEN Stack with OAuth Template
+# Burgertime
 
-This is a MEN Stack template that includes OAuth.
+![Burgertime Homepage](https://imgur.com/QtnXqpn.png)
 
-Use this to go build things! 🚀
+Burgertime is a full CRUD application designed for avid burger afficionados to log and track their favorite burgers! Each user is able to view the Afficionados page, where you can see each individuals personal contributions to Burgertime, aka their favorite burgers! Each user is able to leave reviews on any Burger in the database, so please let everbody know your truth!  
 
-## To Use This Template
+---
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
+![Burgertime Wireframe](https://imgur.com/04FwNLL.png)
+Original Burgertime Wireframe
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+---
 
-Once you are in the project directory:
+## [VISIT BURGERTIME](https://burgertime2022.herokuapp.com/burgers)
 
-```bash
-rm -rf .git
-```
+---
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+## 🌐 Technologies Used 
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
+![Node.JS](https://img.shields.io/badge/-Node.JS-black?style=plastic&logo=Node.js)
+![Express.JS](https://img.shields.io/badge/-Express.JS-c7b198?style=plastic&logo=Express.JS)
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap)
+![MongoDB](https://img.shields.io/badge/-MongoDB-black?style=flat-square&logo=mongodb)
+![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)
+![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=plastic&logo=visual-studio-code)
 
-Re-initialize a git repository:
+---
 
-```bash
-git init
-```
-Use whatever method you'd like to get your project on GitHub. If you're looking for speed though use the GitHub CLI to create a new project repository on GitHub:
+## 🥂 Attributions
 
-```bash
-gh repo create <name-of-your-app-here> --public --source .
-```
-Check out the docs [here](https://cli.github.com/manual/gh_repo_create) if you want to learn more about this command. 
+Burgertime uses Google OAuth 2.0 for user authentication and profile data population. Information can be found at Google Cloud Platform.\
 
-Run npm i to fetch the template's dependencies:
+The placeholder burger picture is found at [Best Things VT](https://bestthingsvt.com/burgers/)
 
-```bash
-npm i
-```
+The Add Picture Icon is found at [The Noun Project](https://thenounproject.com/icon/add-picture-485692/)
 
-touch a .env file:
+---
 
-```bash
-touch .env
-```
+## ⚙️ Recent Changes
 
-Fill it with the following:
+- [x] Link burger to users profile
 
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=http://localhost:3000/auth/google/oauth2callback
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
+---
 
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
+## 🧊 Ice Box
 
-Delete this README.md and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+- [ ] ADD BURGERTIME LOGO TO NAV BAR
+- [ ] Add burgers to a favorites array/ remove burgers from said array
+- [ ] implement review editing
+- [ ] dropdown search bar
+- [ ] sort reviews by rating
+- [ ] Light/Dark Mode
+- [ ] Implement a button that picks what burger I want to eat tonight
+- [ ] Implement a search function where user can search by burger, restaurant or user
+- [ ] Add images to add burger and edit pages
+- [ ] View links to users reviews in users profile
+- [ ] Create a restaurant page that compiles burgers belonging to it.
+- [ ] Add an ingredients schema to record the ingredients of each burger.
