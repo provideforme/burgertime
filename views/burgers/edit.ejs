@@ -1,10 +1,11 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/add.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <div id="heading">
     <h1>Edit Your Burger</h1>
-    <img src="../images/vt-burger-1.jpeg">
+    <img id="addIMG" src="/images/addIMG2.png">
   </div>
     <form action="/burgers/<%= burger._id %>?_method=PUT" method="POST" method="POST">
       <label>
@@ -52,7 +53,9 @@
         <%= burger.cheese ? "checked" : "" %>
         >
       </label>
-      <button type="submit">Submit Edits</button>
+      <label id="burgersubmit">
+        <button class="btn btn-outline-dark btn-lg" type="submit">Submit Edit</button>
+      </label>
     </form>
   </main>
 
