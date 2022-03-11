@@ -4,7 +4,10 @@
 
 <main>
   <% if (user) { %>
-    <h1>Add your Favorite Burger!</h1>
+    <div id="heading">
+      <h1>Add A Burger</h1>
+      <img id="addIMG" src="../images/addIMG2.png">
+    </div>
     <form id="new-form" action="/burgers" method="POST">
       <label>
         Name: 
@@ -36,7 +39,9 @@
         <input type="checkbox" name="cheese">
       </label>
       <br>
-      <button class="btn btn-outline-dark btn-lg" type="submit">Add Burger</button>
+      <label id="burgersubmit">
+        <button class="btn btn-outline-dark btn-lg" type="submit">Add Burger</button>
+      </label>
     </form>
   <% } %>
   </main>
