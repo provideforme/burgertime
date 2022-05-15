@@ -72,6 +72,10 @@ img {
   border-radius: 20px;
 }
 
+#logo {
+  border: none;
+}
+
 nav > a {
   margin: 0rem 3rem;
   text-decoration: none;
