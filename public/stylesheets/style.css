@@ -24,7 +24,7 @@ body {
   margin: 0;
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 44%, rgba(227,232,233,1) 100%);
-  height: 110vh;
+  height: 130vh;
 }
 
 nav {
