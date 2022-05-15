@@ -27,13 +27,17 @@ body {
   /* height: 130vh; */
 }
 
-nav {
+#hamburger-menu {
+  display: none;
+}
+
+/* nav {
   background-color: #d482e2;
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
   height: 50px;
-}
+} */
 
 main {
   display: flex;
@@ -76,7 +80,7 @@ img {
   border: none;
 }
 
-nav > a {
+/* nav > a {
   margin: 0rem 3rem;
   text-decoration: none;
   color: whitesmoke;
@@ -90,7 +94,7 @@ nav a {
   width: 100%;
   margin: 0;
 
-}
+} */
 
 h2 > a, h3 > a {
   color: black;
@@ -158,16 +162,11 @@ label {
 }
 
 @media only screen and (max-width: 414px) {
-  /* nav > a {
-    margin: 0rem 2rem;
-    font-size: 14px;
-    margin: 0px 5px;
-  }
 
-  #burger-details {
+  /* #burger-details {
     text-align: center;
     width: 550px;
-  } */
+  }  */
   #heading h1 {
     font-size: 2.4rem;
     font-weight: bold;
@@ -176,6 +175,10 @@ label {
 
   img {
     max-width: 100%;
+  }
+
+  #heading img {
+    margin: 20px 20px 35px;
   }
 
   div {
@@ -187,6 +190,10 @@ label {
     width: 100px;
     object-fit: scale-down;
     /* max-width: 100%; */
+  }
+
+  #foot, #to-new {
+    font-size: 15px;
   }
 
 }

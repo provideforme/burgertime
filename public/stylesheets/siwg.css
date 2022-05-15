@@ -6,9 +6,9 @@
   height: 46px;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 414px){
   .siwg {
-    background: url(/images/auth/google/siwg_crop_light_pressed.png);
+    background: url(/images/auth/google/siwg_crop2_light_pressed.png);
 
     width: 95px;
     cursor: pointer;
