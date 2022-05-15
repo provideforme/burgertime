@@ -27,18 +27,6 @@ body {
   /* height: 130vh; */
 }
 
-#hamburger-menu {
-  display: none;
-}
-
-/* nav {
-  background-color: #d482e2;
-  font-size: 1.6rem;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-} */
-
 main {
   display: flex;
   align-items: center;
@@ -161,7 +149,9 @@ label {
   justify-content: center;
 }
 
-@media only screen and (max-width: 414px) {
+/* need media quuery at 1001 as well */
+
+@media only screen and (max-width: 768px) {
 
   /* #burger-details {
     text-align: center;
@@ -186,8 +176,8 @@ label {
   }
 
   #logo {
-    height: 50px;
-    width: 100px;
+    height: 75px;
+    width: 200px;
     object-fit: scale-down;
     /* max-width: 100%; */
   }

@@ -6,22 +6,22 @@ li {
   list-style: none;
 }
 
+.menu {
+  flex-direction: row;
+}
+
 /* NAVBAR STYLING STARTS */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
   background-color: #d482e2;
   color: #fff;
 }
 .nav-links a {
   color: #fff;
 }
-/* LOGO */
-.logo {
-  font-size: 32px;
-}
+
 /* NAVBAR MENU */
 .menu {
   display: flex;
@@ -56,7 +56,7 @@ input[type="checkbox"] {
   .menu {
     display: none;
     position: absolute;
-    background-color: teal;
+    background-color: #d482e2;
     right: 0;
     left: 0;
     text-align: center;
@@ -64,7 +64,7 @@ input[type="checkbox"] {
   }
   .menu li:hover {
     display: inline-block;
-    background-color: #4c9e9e;
+    background-color: #d482e2;
     transition: 0.3s ease;
   }
   .menu li + li {
