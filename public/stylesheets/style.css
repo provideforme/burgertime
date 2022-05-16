@@ -68,22 +68,6 @@ img {
   border: none;
 }
 
-/* nav > a {
-  margin: 0rem 3rem;
-  text-decoration: none;
-  color: whitesmoke;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-nav a {
-  width: 100%;
-  margin: 0;
-
-} */
-
 h2 > a, h3 > a {
   color: black;
   text-decoration: none;
@@ -93,8 +77,6 @@ h2 > a, h3 > a {
   width: 400px;
   height: 268px;
 }
-
-
 
 .btn {
   margin: 1 rem 0;
@@ -185,6 +167,11 @@ label {
 
   #foot, #to-new {
     font-size: 15px;
+  }
+
+  #addIMG {
+    width: 292.5px;
+    object-fit: scale-down;
   }
 
 }
