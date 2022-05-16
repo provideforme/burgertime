@@ -75,5 +75,6 @@ input[type="checkbox"] {
   }
   .hamburger {
     display: block;
+    font-size: 40px;
   }
 }

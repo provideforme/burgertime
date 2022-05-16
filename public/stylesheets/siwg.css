@@ -4,6 +4,7 @@
   border: none;
   width: 191px;
   height: 46px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 414px){

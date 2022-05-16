@@ -151,7 +151,7 @@ label {
 
 /* need media quuery at 1001 as well */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 414px) {
 
   /* #burger-details {
     text-align: center;
@@ -176,6 +176,7 @@ label {
   }
 
   #logo {
+    margin-left: 10px;
     height: 75px;
     width: 200px;
     object-fit: scale-down;
