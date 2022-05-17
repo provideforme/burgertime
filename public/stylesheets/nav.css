@@ -77,4 +77,11 @@ input[type="checkbox"] {
     display: block;
     font-size: 40px;
   }
+
+  .logout {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-right: 26px;
+    margin-left: 10px;
+  }
 }
