@@ -36,10 +36,6 @@ li {
 .menu li {
   padding: 5px 14px;
 }
-/* DROPDOWN MENU */
-.services {
-  position: relative;
-}
 /*RESPONSIVE NAVBAR MENU STARTS*/
 /* CHECKBOX HACK */
 input[type="checkbox"] {
@@ -56,6 +52,7 @@ input[type="checkbox"] {
   .menu {
     display: none;
     position: absolute;
+    top: 85px;
     background-color: #d482e2;
     right: 0;
     left: 0;
