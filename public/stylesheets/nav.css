@@ -48,6 +48,7 @@ input[type="checkbox"] {
   user-select: none;
 }
 /* APPLYING MEDIA QUERIES */
+
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -59,6 +60,7 @@ input[type="checkbox"] {
     text-align: center;
     padding: 16px 0;
   }
+  
   .menu li:hover {
     display: inline-block;
     background-color: #d482e2;
