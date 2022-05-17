@@ -27,6 +27,7 @@ li {
   display: flex;
   gap: 1em;
   font-size: 18px;
+  z-index: 99999;
 }
 .menu li:hover {
   background-color: #d482e2;
@@ -60,7 +61,7 @@ input[type="checkbox"] {
     text-align: center;
     padding: 16px 0;
   }
-  
+
   .menu li:hover {
     display: inline-block;
     background-color: #d482e2;
