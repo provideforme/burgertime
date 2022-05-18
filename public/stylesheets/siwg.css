@@ -7,6 +7,31 @@
   margin-right: 10px;
 }
 
+@media only screen and (max-width: 1011px) and (min-width: 778px){
+  .siwg {
+    background: url(/images/auth/google/siwg_crop2_light_pressed.png);
+
+    width: 95px;
+    cursor: pointer;
+    border: none;
+    height: 46px;
+    margin-right: 55px;
+    margin-left: 7px;
+  }
+}
+
+@media only screen and (max-width: 778px) and (min-width: 415px){
+  .siwg {
+    background: url(/images/auth/google/siwg_crop2_light_pressed.png);
+
+    width: 95px;
+    cursor: pointer;
+    border: none;
+    height: 46px;
+    margin-right: 24px;
+  }
+}
+
 @media only screen and (max-width: 414px){
   .siwg {
     background: url(/images/auth/google/siwg_crop2_light_pressed.png);

@@ -48,9 +48,66 @@ input[type="checkbox"] {
   font-size: 24px;
   user-select: none;
 }
+
+.logout {
+  font-size: 18px;
+  color: #FFFFFF;
+  margin-right: 26px;
+  margin-left: 106px;
+}
+
+.logout:hover {
+  color: #FFFFFF;
+}
 /* APPLYING MEDIA QUERIES */
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 1011px) and (min-width: 709px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 140px;
+    background-color: #d482e2;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 30px;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #d482e2;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 80px;
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+  .logout {
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-right: 46px;
+  }
+
+  #logo {
+    margin-left: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 778px) and (min-width: 415px) {
   .menu {
     display: none;
     position: absolute;
@@ -67,12 +124,64 @@ input[type="checkbox"] {
     background-color: #d482e2;
     transition: 0.3s ease;
   }
+
   .menu li + li {
     margin-top: 12px;
   }
+
   input[type="checkbox"]:checked ~ .menu {
     display: block;
   }
+
+  .hamburger {
+    display: block;
+    font-size: 40px;
+  }
+
+  
+  #logo {
+    margin-left: 10px;
+    height: 75px;
+    width: 200px;
+    object-fit: scale-down;
+    /* max-width: 100%; */
+  }
+  
+
+  .logout {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-right: 26px;
+    margin-left: 23.5px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 85px;
+    background-color: #d482e2;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #d482e2;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
   .hamburger {
     display: block;
     font-size: 40px;
