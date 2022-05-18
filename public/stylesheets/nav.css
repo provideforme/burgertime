@@ -156,7 +156,50 @@ input[type="checkbox"] {
   }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 414px) and (min-width: 375px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 85px;
+    background-color: #d482e2;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #d482e2;
+    transition: 0.3s ease;
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 40px;
+  }
+
+  .logout {
+    font-size: 18px;
+    color: #FFFFFF;
+    margin-right: 26px;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  nav {
+    max-width: 100%;
+  }
+
   .menu {
     display: none;
     position: absolute;
