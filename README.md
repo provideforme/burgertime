@@ -43,12 +43,13 @@ The Add Picture Icon is found at [The Noun Project](https://thenounproject.com/i
 ## ⚙️ Recent Changes
 
 - [x] Link burger to users profile
+- [X] ADD BURGERTIME LOGO TO NAV BAR
+- [X] Site is fully mobile responsive
 
 ---
 
 ## 🧊 Ice Box
 
-- [ ] ADD BURGERTIME LOGO TO NAV BAR
 - [ ] Add burgers to a favorites array/ remove burgers from said array
 - [ ] implement review editing
 - [ ] dropdown search bar
